@@ -76,27 +76,27 @@ function NewProvider({ visibility, callback, refresh, refreshListCallback }) {
                 break
             case 'nombreComercial':
                 setNombreComercial(v_)
-                if (v_ !== '') { setNombreComercialError('') } else { setNombreComercialError('Razon social requerida') }
+                if (v_ !== '') { setNombreComercialError('') } else { setNombreComercialError('Nombre comercial requerida') }
                 break
             case 'identificacionTributaria':
                 setIdentificacionTributaria(v_)
-                if (v_ !== '') { setIdentificacionTributariaError('') } else { setIdentificacionTributariaError('Razon social requerida') }
+                if (v_ !== '') { setIdentificacionTributariaError('') } else { setIdentificacionTributariaError('Identificacion tributaria requerida') }
                 break
             case 'numeroTelefonico':
                 setNumeroTelefonico(v_)
-                if (v_ !== '') { setNumeroTelefonicoError('') } else { setNumeroTelefonicoError('Razon social requerida') }
+                if (v_ !== '') { setNumeroTelefonicoError('') } else { setNumeroTelefonicoError('Numero telefonico requerida') }
                 break
             case 'correoElectronico':
                 setCorreoElectronico(v_)
-                if (v_ !== '') { setCorreoElectronicoError('') } else { setCorreoElectronicoError('Razon social requerida') }
+                if (v_ !== '') { setCorreoElectronicoError('') } else { setCorreoElectronicoError('Correo electronico requerida') }
                 break
             case 'sitioWeb':
                 setSitioWeb(v_)
-                if (v_ !== '') { setSitioWebError('') } else { setSitioWebError('Razon social requerida') }
+                if (v_ !== '') { setSitioWebError('') } else { setSitioWebError('Sitio web requerida') }
                 break
             case 'direccionFisica':
                 setDireccionFisica(v_)
-                if (v_ !== '') { setDireccionFisicaError('') } else { setDireccionFisicaError('Razon social requerida') }
+                if (v_ !== '') { setDireccionFisicaError('') } else { setDireccionFisicaError('Direccion fisica requerida') }
                 break
             case 'pais':
                 setPais(v_)
@@ -104,7 +104,7 @@ function NewProvider({ visibility, callback, refresh, refreshListCallback }) {
                 break
             case 'facturacionAnual':
                 setFacturacionAnual(v_)
-                if (v_ !== '') { setFacturacionAnualError('') } else { setFacturacionAnualError('Razon social requerida') }
+                if (v_ !== '') { setFacturacionAnualError('') } else { setFacturacionAnualError('Facturacion anual requerida') }
                 break
             default:
                 break

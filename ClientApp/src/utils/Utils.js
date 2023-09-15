@@ -43,7 +43,7 @@ export async function getProvider(id) {
 
 export async function getHighRiskEntities(provider) {
 
-    const res = await fetch(`http://localhost:5069/searchRiskEntity?name=${provider}`);
+    const res = await fetch(`apiURL`);
 
     if (!res.ok && res.status !== 200) {
         return highRiskEntities;
