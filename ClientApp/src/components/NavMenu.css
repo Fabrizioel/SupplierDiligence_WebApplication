@@ -1,0 +1,57 @@
+﻿a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+
+.table-header-actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.dialog-max {
+  max-height: 100%;
+  height: 500px;
+}
+
+.date-time {
+  display: flex;
+  flex-direction: column;
+}
+
+.error-message {
+  color: #bc2f32;
+}
+
+.error-icon {
+  width: 14px;
+  height: 14px;
+}
