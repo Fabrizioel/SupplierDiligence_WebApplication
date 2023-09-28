@@ -43,7 +43,7 @@ export async function getProvider(id) {
 
 export async function getHighRiskEntities(provider) {
 
-    const res = await fetch(`apiURL`);
+    const res = await fetch(`https://webscrapinghighrisk20230915164939.azurewebsites.net/searchRiskEntity?name=${provider}`);
 
     if (!res.ok && res.status !== 200) {
         return highRiskEntities;
