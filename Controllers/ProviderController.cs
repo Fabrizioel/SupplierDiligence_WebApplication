@@ -97,51 +97,30 @@ namespace HighRiskProviders_Application.Controllers
             try
             {
                 // Obtener el primer proveedor que coincida con el ID
-                var entry_ = await _context.Providers.FirstAsync(e => e.ID == provider.ID);
-                
-                // Verificar y actualizar cada campo que no sea igual para evitar excepciones
-                if (entry_?.RazonSocial != provider.RazonSocial)
+                if (_context.Providers != null)
                 {
-                    entry_.RazonSocial = provider.RazonSocial;
-                }
-                if (entry_?.NombreComercial != provider.NombreComercial)
-                {
-                    entry_.NombreComercial = provider.NombreComercial;
-                }
-                if (entry_?.IdentificacionTributaria != provider.IdentificacionTributaria)
-                {
-                    entry_.IdentificacionTributaria = provider.IdentificacionTributaria;
-                }
-                if (entry_?.NumeroTelefonico != provider.NumeroTelefonico)
-                {
-                    entry_.NumeroTelefonico = provider.NumeroTelefonico;
-                }
-                if (entry_?.CorreoElectronico != provider.CorreoElectronico)
-                {
-                    entry_.CorreoElectronico = provider.CorreoElectronico;
-                }
-                if (entry_?.SitioWeb != provider.SitioWeb)
-                {
-                    entry_.SitioWeb = provider.SitioWeb;
-                }
-                if (entry_?.DireccionFisica != provider.DireccionFisica)
-                {
-                    entry_.DireccionFisica = provider.DireccionFisica;
-                }
-                if (entry_?.Pais != provider.Pais)
-                {
-                    entry_.Pais = provider.Pais;
-                }
-                if (entry_?.FacturacionAnual != provider.FacturacionAnual)
-                {
-                    entry_.FacturacionAnual = provider.FacturacionAnual;
-                }
+                    var entry_ = await _context.Providers.FirstAsync(e => e.ID == provider.ID);
 
-                // Nueva la fecha y hora de actualizacion
-                entry_.FechaEdicion = DateTime.Now;
+                    // Verificar y actualizar cada campo que no sea igual para evitar excepciones
+                    if (entry_ != null)
+                    {
+                        if (entry_.RazonSocial != provider.RazonSocial) entry_.RazonSocial = provider.RazonSocial;
+                        else if (entry_.NombreComercial != provider.NombreComercial) entry_.NombreComercial = provider.NombreComercial;
+                        else if (entry_.IdentificacionTributaria != provider.IdentificacionTributaria) entry_.IdentificacionTributaria = provider.IdentificacionTributaria;
+                        else if (entry_.NumeroTelefonico != provider.NumeroTelefonico) entry_.NumeroTelefonico = provider.NumeroTelefonico;
+                        else if (entry_.CorreoElectronico != provider.CorreoElectronico) entry_.CorreoElectronico = provider.CorreoElectronico;
+                        else if (entry_.SitioWeb != provider.SitioWeb) entry_.SitioWeb = provider.SitioWeb;
+                        else if (entry_.DireccionFisica != provider.DireccionFisica) entry_.DireccionFisica = provider.DireccionFisica;
+                        else if (entry_.Pais != provider.Pais) entry_.Pais = provider.Pais;
+                        else if (entry_.FacturacionAnual != provider.FacturacionAnual) entry_.FacturacionAnual = provider.FacturacionAnual;
 
-                // Guardar cambios en BD
-                await _context.SaveChangesAsync();
+                        // Nueva la fecha y hora de actualizacion
+                        entry_.FechaEdicion = DateTime.Now;
+                    };
+
+                    // Guardar cambios en BD
+                    await _context.SaveChangesAsync();
+                };
             }
             catch (DbUpdateConcurrencyException)
             {

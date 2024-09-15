@@ -7,9 +7,8 @@ namespace HighRiskProviders_Application.Data;
 
 public class DbhighRiskProvidersContext : DbContext
 {
+    public DbSet<Provider>? Providers { get; set; }
 
     public DbhighRiskProvidersContext(DbContextOptions<DbhighRiskProvidersContext> options) : base(options) { }
-
-    public DbSet<Provider> Providers { get; set; }
 
 }
